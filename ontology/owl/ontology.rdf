@@ -1,0 +1,536 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<neo4j://graph.schema#isselfsigned> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#CERTIFICATE>;
+  rdfs:label "isselfsigned";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean> .
+
+<neo4j://graph.schema#destinationapplicationsecuritygroups> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>;
+  rdfs:label "destinationapplicationsecuritygroups";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#slotnames> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#APPSERVICEPLAN>;
+  rdfs:label "slotnames";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#created> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#KEYVAULTSECRETVERSION>, <neo4j://graph.schema#SUBSCRIPTION>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "created" .
+
+<neo4j://graph.schema#sourceportranges> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>;
+  rdfs:label "sourceportranges";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#type> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#ARMRESOURCE>,
+    <neo4j://graph.schema#AADSERVICEPRINCIPAL>, <neo4j://graph.schema#AADOBJECT>;
+  rdfs:label "type";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#validto> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#KEYVAULTSECRETVERSION>, <neo4j://graph.schema#CERTIFICATE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "validto" .
+
+<neo4j://graph.schema#HASROUTE> a owl:ObjectProperty;
+  rdfs:label "HASROUTE";
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#FUNCTIONAPP>;
+  rdfs:range <neo4j://graph.schema#FUNCTION> .
+
+<neo4j://graph.schema#KUSTOCLUSTER> a owl:Class;
+  rdfs:label "KUSTOCLUSTER" .
+
+<neo4j://graph.schema#tenantid> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#NETWORKSECURITYGROUP>, <neo4j://graph.schema#ARMRESOURCE>,
+    <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADUSER>, <neo4j://graph.schema#NETWORKINTERFACE>,
+    <neo4j://graph.schema#KUSTODATABASE>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>,
+    <neo4j://graph.schema#VIRTUALMACHINE>, <neo4j://graph.schema#TENANT>, <neo4j://graph.schema#VIRTUALNETWORK>,
+    <neo4j://graph.schema#APPSERVICEPLAN>, <neo4j://graph.schema#RESOURCEGROUP>, <neo4j://graph.schema#LOADBALANCER>,
+    <neo4j://graph.schema#AADGROUP>, <neo4j://graph.schema#STORAGEACCOUNT>, <neo4j://graph.schema#SUBNET>,
+    <neo4j://graph.schema#SERVICEFABRICCLUSTER>, <neo4j://graph.schema#KUSTOCLUSTER>,
+    <neo4j://graph.schema#MANAGEMENTGROUP>, <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#AADAPPLICATION>,
+    <neo4j://graph.schema#FUNCTIONAPP>, <neo4j://graph.schema#VIRTUALMACHINESCALESET>,
+    <neo4j://graph.schema#SUBSCRIPTION>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>,
+    <neo4j://graph.schema#PUBLICIPADDRESS>, <neo4j://graph.schema#MANAGEDIDENTITY>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "tenantid" .
+
+<neo4j://graph.schema#subjectalternativename> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "subjectalternativename";
+  rdfs:domain <neo4j://graph.schema#CERTIFICATE> .
+
+<neo4j://graph.schema#isinternal> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>;
+  rdfs:label "isinternal";
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#LOADBALANCER> .
+
+<neo4j://graph.schema#ipaddress> a owl:DatatypeProperty;
+  rdfs:label "ipaddress";
+  rdfs:domain <neo4j://graph.schema#PUBLICIPADDRESS>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#name> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#STORAGEACCOUNT>,
+    <neo4j://graph.schema#VIRTUALMACHINE>, <neo4j://graph.schema#FUNCTIONAPP>, <neo4j://graph.schema#RESOURCEGROUP>,
+    <neo4j://graph.schema#NETWORKINTERFACE>, <neo4j://graph.schema#PUBLICIPADDRESS>, <neo4j://graph.schema#VIRTUALMACHINESCALESET>,
+    <neo4j://graph.schema#SUBSCRIPTION>, <neo4j://graph.schema#KUSTODATABASE>, <neo4j://graph.schema#TENANT>,
+    <neo4j://graph.schema#SERVICEFABRICCLUSTER>, <neo4j://graph.schema#FUNCTION>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>,
+    <neo4j://graph.schema#PERSON>, <neo4j://graph.schema#KEYVAULTSECRETVERSION>, <neo4j://graph.schema#MANAGEDIDENTITY>,
+    <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>, <neo4j://graph.schema#VIRTUALNETWORK>,
+    <neo4j://graph.schema#AADAPPLICATION>, <neo4j://graph.schema#MANAGEMENTGROUP>, <neo4j://graph.schema#KUSTOCLUSTER>,
+    <neo4j://graph.schema#APPSERVICEPLAN>, <neo4j://graph.schema#KUSTOTABLE>, <neo4j://graph.schema#NETWORKSECURITYGROUP>,
+    <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADUSER>,
+    <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#LOADBALANCER>, <neo4j://graph.schema#AADGROUP>;
+  rdfs:label "name";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#FUNCTION> a owl:Class;
+  rdfs:label "FUNCTION" .
+
+<neo4j://graph.schema#destinationaddressprefixes> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>;
+  rdfs:label "destinationaddressprefixes";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#ISINSTANCEOF> a owl:ObjectProperty;
+  rdfs:range <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION>;
+  rdfs:label "ISINSTANCEOF";
+  rdfs:domain <neo4j://graph.schema#AADSERVICEPRINCIPAL>, <neo4j://graph.schema#AADOBJECT> .
+
+<neo4j://graph.schema#validfrom> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#CERTIFICATE>, <neo4j://graph.schema#KEYVAULTSECRETVERSION>;
+  rdfs:label "validfrom" .
+
+<neo4j://graph.schema#domain> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADUSER>;
+  rdfs:label "domain";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#version> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#PUBLICIPADDRESS>, <neo4j://graph.schema#KEYVAULTSECRETVERSION>,
+    <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "version" .
+
+<neo4j://graph.schema#HASIDENTITY> a owl:ObjectProperty;
+  rdfs:domain <neo4j://graph.schema#FUNCTIONAPP>, <neo4j://graph.schema#VIRTUALMACHINE>,
+    <neo4j://graph.schema#PERSON>, <neo4j://graph.schema#VIRTUALMACHINESCALESET>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:range <neo4j://graph.schema#AADSERVICEPRINCIPAL>, <neo4j://graph.schema#ARMRESOURCE>,
+    <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#AADUSER>, <neo4j://graph.schema#AADOBJECT>;
+  rdfs:label "HASIDENTITY" .
+
+<neo4j://graph.schema#SUBSCRIPTION> a owl:Class;
+  rdfs:label "SUBSCRIPTION" .
+
+<neo4j://graph.schema#applicationid> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#AADAPPLICATION>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>,
+    <neo4j://graph.schema#AADOBJECT>;
+  rdfs:label "applicationid" .
+
+<neo4j://graph.schema#CONTAINS> a owl:ObjectProperty;
+  rdfs:range <neo4j://graph.schema#STORAGEACCOUNTKEY>, <neo4j://graph.schema#KEY>, <neo4j://graph.schema#VIRTUALMACHINE>,
+    <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#FUNCTIONAPP>, <neo4j://graph.schema#STORAGEACCOUNT>,
+    <neo4j://graph.schema#RESOURCEGROUP>, <neo4j://graph.schema#PUBLICIPADDRESS>, <neo4j://graph.schema#KUSTODATABASE>,
+    <neo4j://graph.schema#AADSERVICEPRINCIPAL>, <neo4j://graph.schema#SUBSCRIPTION>, <neo4j://graph.schema#SERVICEFABRICCLUSTER>,
+    <neo4j://graph.schema#NETWORKINTERFACE>, <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#KUSTOTABLE>,
+    <neo4j://graph.schema#VIRTUALMACHINESCALESET>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>,
+    <neo4j://graph.schema#VIRTUALNETWORK>, <neo4j://graph.schema#CERTIFICATE>, <neo4j://graph.schema#NETWORKSECURITYGROUP>,
+    <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#LOADBALANCER>, <neo4j://graph.schema#MANAGEMENTGROUP>,
+    <neo4j://graph.schema#KUSTOCLUSTER>, <neo4j://graph.schema#KEYVAULTSECRETVERSION>,
+    <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#APPSERVICEPLAN>,
+    <neo4j://graph.schema#AADUSER>;
+  rdfs:label "CONTAINS";
+  rdfs:domain <neo4j://graph.schema#KUSTODATABASE>, <neo4j://graph.schema#NETWORKSECURITYGROUP>,
+    <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#APPSERVICEPLAN>, <neo4j://graph.schema#KEYVAULTSECRETVERSION>,
+    <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#SUBSCRIPTION>, <neo4j://graph.schema#VIRTUALMACHINESCALESET>,
+    <neo4j://graph.schema#MANAGEMENTGROUP>, <neo4j://graph.schema#KUSTOCLUSTER>, <neo4j://graph.schema#AADGROUP>,
+    <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#RESOURCEGROUP>, <neo4j://graph.schema#VIRTUALNETWORK> .
+
+<neo4j://graph.schema#subscriptionid> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#RESOURCEGROUP>, <neo4j://graph.schema#LOADBALANCER>,
+    <neo4j://graph.schema#VIRTUALNETWORK>, <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#STORAGEACCOUNT>,
+    <neo4j://graph.schema#SERVICEFABRICCLUSTER>, <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#KUSTOCLUSTER>,
+    <neo4j://graph.schema#VIRTUALMACHINESCALESET>, <neo4j://graph.schema#SUBSCRIPTION>,
+    <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>, <neo4j://graph.schema#PUBLICIPADDRESS>,
+    <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#NETWORKSECURITYGROUP>,
+    <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#NETWORKINTERFACE>, <neo4j://graph.schema#FUNCTIONAPP>,
+    <neo4j://graph.schema#VIRTUALMACHINE>, <neo4j://graph.schema#KUSTODATABASE>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>,
+    <neo4j://graph.schema#APPSERVICEPLAN>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:label "subscriptionid";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#mailenabled> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADGROUP>;
+  rdfs:label "mailenabled";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean> .
+
+<neo4j://graph.schema#access> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>;
+  rdfs:label "access" .
+
+<neo4j://graph.schema#region> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#STORAGEACCOUNT>, <neo4j://graph.schema#KEYVAULT>,
+    <neo4j://graph.schema#LOADBALANCER>, <neo4j://graph.schema#VIRTUALMACHINESCALESET>,
+    <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>, <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#PUBLICIPADDRESS>,
+    <neo4j://graph.schema#KUSTOCLUSTER>, <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#AADOBJECT>,
+    <neo4j://graph.schema#FUNCTIONAPP>, <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>,
+    <neo4j://graph.schema#NETWORKSECURITYGROUP>, <neo4j://graph.schema#NETWORKINTERFACE>,
+    <neo4j://graph.schema#APPSERVICEPLAN>, <neo4j://graph.schema#SERVICEFABRICCLUSTER>,
+    <neo4j://graph.schema#KUSTODATABASE>, <neo4j://graph.schema#VIRTUALMACHINE>, <neo4j://graph.schema#VIRTUALNETWORK>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "region" .
+
+<neo4j://graph.schema#notbefore> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "notbefore";
+  rdfs:domain <neo4j://graph.schema#KEY>, <neo4j://graph.schema#STORAGEACCOUNTKEY> .
+
+<neo4j://graph.schema#signinaudience> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "signinaudience";
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION> .
+
+<neo4j://graph.schema#LOADBALANCER> a owl:Class;
+  rdfs:label "LOADBALANCER" .
+
+<neo4j://graph.schema#replyurls> a owl:DatatypeProperty;
+  rdfs:label "replyurls";
+  rdfs:domain <neo4j://graph.schema#AADAPPLICATION>, <neo4j://graph.schema#AADOBJECT>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#resourceid> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#SERVICEFABRICCLUSTER>,
+    <neo4j://graph.schema#MANAGEMENTGROUP>, <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#NETWORKSECURITYGROUP>,
+    <neo4j://graph.schema#AADSERVICEPRINCIPAL>, <neo4j://graph.schema#KUSTODATABASE>,
+    <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#VIRTUALNETWORK>, <neo4j://graph.schema#FUNCTIONAPP>,
+    <neo4j://graph.schema#STORAGEACCOUNT>, <neo4j://graph.schema#VIRTUALMACHINE>, <neo4j://graph.schema#APPSERVICEPLAN>,
+    <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#NETWORKINTERFACE>, <neo4j://graph.schema#LOADBALANCER>,
+    <neo4j://graph.schema#KUSTOCLUSTER>, <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#VIRTUALMACHINESCALESET>,
+    <neo4j://graph.schema#PUBLICIPADDRESS>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "resourceid" .
+
+<neo4j://graph.schema#KEYVAULTSECRETVERSION> a owl:Class;
+  rdfs:label "KEYVAULTSECRETVERSION" .
+
+<neo4j://graph.schema#mailnickname> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "mailnickname";
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADGROUP> .
+
+<neo4j://graph.schema#mail> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#PERSON>, <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADGROUP>,
+    <neo4j://graph.schema#AADUSER>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "mail" .
+
+<neo4j://graph.schema#HASROLE> a owl:ObjectProperty;
+  rdfs:range <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#KUSTODATABASE>,
+    <neo4j://graph.schema#TENANT>, <neo4j://graph.schema#VIRTUALMACHINESCALESET>, <neo4j://graph.schema#KUSTOCLUSTER>,
+    <neo4j://graph.schema#STORAGEACCOUNT>, <neo4j://graph.schema#RESOURCEGROUP>, <neo4j://graph.schema#FUNCTIONAPP>,
+    <neo4j://graph.schema#MANAGEMENTGROUP>;
+  rdfs:domain <neo4j://graph.schema#AADUSER>, <neo4j://graph.schema#AADGROUP>, <neo4j://graph.schema#AADOBJECT>,
+    <neo4j://graph.schema#AADSERVICEPRINCIPAL>;
+  rdfs:label "HASROLE" .
+
+<neo4j://graph.schema#APPSERVICEPLAN> a owl:Class;
+  rdfs:label "APPSERVICEPLAN" .
+
+<neo4j://graph.schema#thumbprint> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#CERTIFICATE>;
+  rdfs:label "thumbprint";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#route> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#FUNCTION>;
+  rdfs:label "route";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#USES> a owl:ObjectProperty;
+  rdfs:label "USES";
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#FUNCTIONAPP>;
+  rdfs:range <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#STORAGEACCOUNT> .
+
+<neo4j://graph.schema#direction> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:label "direction";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#SERVICEFABRICCLUSTER> a owl:Class;
+  rdfs:label "SERVICEFABRICCLUSTER" .
+
+<neo4j://graph.schema#allocationmethod> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#PUBLICIPADDRESS>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:label "allocationmethod";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#sourceapplicationsecuritygroups> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "sourceapplicationsecuritygroups" .
+
+<neo4j://graph.schema#AADUSER> a owl:Class;
+  rdfs:label "AADUSER" .
+
+<neo4j://graph.schema#expirationdatetime> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#AADGROUP>, <neo4j://graph.schema#AADOBJECT>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "expirationdatetime" .
+
+<neo4j://graph.schema#id> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#MANAGEMENTGROUP>, <neo4j://graph.schema#STORAGEACCOUNTKEY>,
+    <neo4j://graph.schema#KEY>;
+  rdfs:label "id";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#isrbacenabled> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>;
+  rdfs:label "isrbacenabled" .
+
+<neo4j://graph.schema#AADOBJECT> a owl:Class;
+  rdfs:label "AADOBJECT" .
+
+<neo4j://graph.schema#appidentifieruris> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION>;
+  rdfs:label "appidentifieruris" .
+
+<neo4j://graph.schema#privateips> a owl:DatatypeProperty;
+  rdfs:label "privateips";
+  rdfs:domain <neo4j://graph.schema#NETWORKINTERFACE>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#PROTECTS> a owl:ObjectProperty;
+  rdfs:range <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKINTERFACE>;
+  rdfs:label "PROTECTS";
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUP> .
+
+<neo4j://graph.schema#FUNCTIONAPP> a owl:Class;
+  rdfs:label "FUNCTIONAPP" .
+
+<neo4j://graph.schema#AUTHENTICATES> a owl:ObjectProperty;
+  rdfs:range <neo4j://graph.schema#STORAGEACCOUNT>, <neo4j://graph.schema#ARMRESOURCE>,
+    <neo4j://graph.schema#AADAPPLICATION>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>,
+    <neo4j://graph.schema#AADOBJECT>;
+  rdfs:label "AUTHENTICATES";
+  rdfs:domain <neo4j://graph.schema#KEY>, <neo4j://graph.schema#STORAGEACCOUNTKEY>,
+    <neo4j://graph.schema#CERTIFICATE> .
+
+<neo4j://graph.schema#addressprefixes> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#VIRTUALNETWORK>,
+    <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "addressprefixes" .
+
+<neo4j://graph.schema#RESOURCEGROUP> a owl:Class;
+  rdfs:label "RESOURCEGROUP" .
+
+<neo4j://graph.schema#securityenabled> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>;
+  rdfs:label "securityenabled";
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADGROUP> .
+
+<neo4j://graph.schema#objectid> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#AADSERVICEPRINCIPAL>, <neo4j://graph.schema#AADOBJECT>,
+    <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#AADGROUP>, <neo4j://graph.schema#AADAPPLICATION>,
+    <neo4j://graph.schema#AADUSER>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:label "objectid";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#NETWORKINTERFACE> a owl:Class;
+  rdfs:label "NETWORKINTERFACE" .
+
+<neo4j://graph.schema#PERSON> a owl:Class;
+  rdfs:label "PERSON" .
+
+<neo4j://graph.schema#HASPERMISSION> a owl:ObjectProperty;
+  rdfs:label "HASPERMISSION";
+  rdfs:range <neo4j://graph.schema#AADAPPLICATION>, <neo4j://graph.schema#AADOBJECT>;
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION> .
+
+<neo4j://graph.schema#ispublicclient> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>;
+  rdfs:label "ispublicclient" .
+
+<neo4j://graph.schema#HASACCESSPOLICY> a owl:ObjectProperty;
+  rdfs:domain <neo4j://graph.schema#MANAGEDIDENTITY>, <neo4j://graph.schema#AADGROUP>,
+    <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>;
+  rdfs:label "HASACCESSPOLICY";
+  rdfs:range <neo4j://graph.schema#KEYVAULT>, <neo4j://graph.schema#ARMRESOURCE> .
+
+<neo4j://graph.schema#MANAGEMENTGROUP> a owl:Class;
+  rdfs:label "MANAGEMENTGROUP" .
+
+<neo4j://graph.schema#ISATTACHEDTO> a owl:ObjectProperty;
+  rdfs:range <neo4j://graph.schema#SUBNET>, <neo4j://graph.schema#VIRTUALMACHINE>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:domain <neo4j://graph.schema#NETWORKINTERFACE>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:label "ISATTACHEDTO" .
+
+<neo4j://graph.schema#AADSERVICEPRINCIPAL> a owl:Class;
+  rdfs:label "AADSERVICEPRINCIPAL" .
+
+<neo4j://graph.schema#STORAGEACCOUNTKEY> a owl:Class;
+  rdfs:label "STORAGEACCOUNTKEY" .
+
+<neo4j://graph.schema#allowspassthrough> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>;
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION>;
+  rdfs:label "allowspassthrough" .
+
+<neo4j://graph.schema#enabled> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean>;
+  rdfs:domain <neo4j://graph.schema#AADUSER>, <neo4j://graph.schema#AADSERVICEPRINCIPAL>,
+    <neo4j://graph.schema#AADOBJECT>;
+  rdfs:label "enabled" .
+
+<neo4j://graph.schema#employeeid> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#PERSON>, <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADUSER>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "employeeid" .
+
+<neo4j://graph.schema#CERTIFICATE> a owl:Class;
+  rdfs:label "CERTIFICATE" .
+
+<neo4j://graph.schema#sourceaddressprefixes> a owl:DatatypeProperty;
+  rdfs:label "sourceaddressprefixes";
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#VIRTUALMACHINESCALESET> a owl:Class;
+  rdfs:label "VIRTUALMACHINESCALESET" .
+
+<neo4j://graph.schema#contenttype> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#KEYVAULTSECRETVERSION>, <neo4j://graph.schema#KEY>,
+    <neo4j://graph.schema#STORAGEACCOUNTKEY>;
+  rdfs:label "contenttype";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#KEYVAULT> a owl:Class;
+  rdfs:label "KEYVAULT" .
+
+<neo4j://graph.schema#KEY> a owl:Class;
+  rdfs:label "KEY" .
+
+<neo4j://graph.schema#subject> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#CERTIFICATE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "subject" .
+
+<neo4j://graph.schema#networkacls> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#KEYVAULT>;
+  rdfs:label "networkacls";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#notafter> a owl:DatatypeProperty;
+  rdfs:label "notafter";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#STORAGEACCOUNTKEY>, <neo4j://graph.schema#KEY> .
+
+<neo4j://graph.schema#KUSTODATABASE> a owl:Class;
+  rdfs:label "KUSTODATABASE" .
+
+<neo4j://graph.schema#ispubliclient> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION>;
+  rdfs:label "ispubliclient";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#boolean> .
+
+<neo4j://graph.schema#AADGROUP> a owl:Class;
+  rdfs:label "AADGROUP" .
+
+<neo4j://graph.schema#issuer> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#CERTIFICATE>;
+  rdfs:label "issuer" .
+
+<neo4j://graph.schema#serialnumber> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "serialnumber";
+  rdfs:domain <neo4j://graph.schema#CERTIFICATE> .
+
+<neo4j://graph.schema#OWNS> a owl:ObjectProperty;
+  rdfs:domain <neo4j://graph.schema#AADUSER>, <neo4j://graph.schema#AADGROUP>, <neo4j://graph.schema#AADOBJECT>;
+  rdfs:range <neo4j://graph.schema#AADOBJECT>, <neo4j://graph.schema#AADAPPLICATION>,
+    <neo4j://graph.schema#AADSERVICEPRINCIPAL>;
+  rdfs:label "OWNS" .
+
+<neo4j://graph.schema#protocol> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>, <neo4j://graph.schema#ARMRESOURCE>;
+  rdfs:label "protocol" .
+
+<neo4j://graph.schema#NETWORKSECURITYGROUP> a owl:Class;
+  rdfs:label "NETWORKSECURITYGROUP" .
+
+<neo4j://graph.schema#priority> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE>;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "priority" .
+
+<neo4j://graph.schema#NETWORKSECURITYGROUPRULE> a owl:Class;
+  rdfs:label "NETWORKSECURITYGROUPRULE" .
+
+<neo4j://graph.schema#PUBLICIPADDRESS> a owl:Class;
+  rdfs:label "PUBLICIPADDRESS" .
+
+<neo4j://graph.schema#KUSTOTABLE> a owl:Class;
+  rdfs:label "KUSTOTABLE" .
+
+<neo4j://graph.schema#userprincipalname> a owl:DatatypeProperty;
+  rdfs:label "userprincipalname";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#AADUSER>, <neo4j://graph.schema#AADOBJECT> .
+
+<neo4j://graph.schema#REPORTSTO> a owl:ObjectProperty;
+  rdfs:label "REPORTSTO";
+  rdfs:domain <neo4j://graph.schema#PERSON>;
+  rdfs:range <neo4j://graph.schema#PERSON> .
+
+<neo4j://graph.schema#VIRTUALNETWORK> a owl:Class;
+  rdfs:label "VIRTUALNETWORK" .
+
+<neo4j://graph.schema#AADAPPLICATION> a owl:Class;
+  rdfs:label "AADAPPLICATION" .
+
+<neo4j://graph.schema#destinationportranges> a owl:DatatypeProperty;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:label "destinationportranges";
+  rdfs:domain <neo4j://graph.schema#ARMRESOURCE>, <neo4j://graph.schema#NETWORKSECURITYGROUPRULE> .
+
+<neo4j://graph.schema#SUBNET> a owl:Class;
+  rdfs:label "SUBNET" .
+
+<neo4j://graph.schema#TENANT> a owl:Class;
+  rdfs:label "TENANT" .
+
+<neo4j://graph.schema#ARMRESOURCE> a owl:Class;
+  rdfs:label "ARMRESOURCE" .
+
+<neo4j://graph.schema#MANAGEDIDENTITY> a owl:Class;
+  rdfs:label "MANAGEDIDENTITY" .
+
+<neo4j://graph.schema#url> a owl:DatatypeProperty;
+  rdfs:label "url";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
+  rdfs:domain <neo4j://graph.schema#FUNCTION> .
+
+<neo4j://graph.schema#appownertenantid> a owl:DatatypeProperty;
+  rdfs:domain <neo4j://graph.schema#AADSERVICEPRINCIPAL>, <neo4j://graph.schema#AADOBJECT>;
+  rdfs:label "appownertenantid";
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+<neo4j://graph.schema#VIRTUALMACHINE> a owl:Class;
+  rdfs:label "VIRTUALMACHINE" .
+
+<neo4j://graph.schema#STORAGEACCOUNT> a owl:Class;
+  rdfs:label "STORAGEACCOUNT" .
